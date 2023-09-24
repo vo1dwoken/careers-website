@@ -2,6 +2,31 @@
 
 {% block title %}Home{% endblock title %}
 {% block body %}
-    <h1>Hello World</h1>
-    <img src="{{ url_for('static', filename='img/main-image.jpg') }}" width="890" alt="ladder-image">
+<div class="container">
+    <h1 class="text-center mt-4 mb-4">Jovian Careers</h1>
+    <img class="img-fluid" src="{{ url_for('static', filename='img/main-image.jpg') }}" alt="ladder-image">
+    <div>
+        <h2 class="text-center mt-4 mb-2">About Jovian</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore
+            magna aliqua. Porttitor lacus luctus accumsan tortor posuere ac. Proin libero nunc consequat interdum. Purus
+            viverra accumsan in nisl nisi scelerisque eu. Felis eget velit aliquet sagittis id consectetur purus ut
+            faucibus. Vulputate dignissim suspendisse in est. Congue mauris rhoncus aenean vel elit scelerisque mauris
+            pellentesque pulvinar. Ac ut consequat semper viverra nam libero justo. Ante metus dictum at tempor commodo
+            ullamcorper a lacus. In fermentum et sollicitudin ac orci phasellus egestas. Etiam dignissim diam quis enim
+            lobortis scelerisque fermentum dui faucibus. Mollis nunc sed id semper risus in.</p>
+    </div>
+    <div>
+        <h2 class="text-center mt-2 mb-4">Open positions</h2>
+        <div>
+            {% for job in jobs %}
+              {% include "jobs.html" %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-dark btn-lg mt-4 mb-2">Contact</button>
+        <p class="mt-4 mb-2">Nocopyright 2023, Jovian</p>
+    </div>
+</div>
 {% endblock body %}
